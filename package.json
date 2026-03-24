@@ -1,0 +1,23 @@
+{
+  "name": "vaayu-anomaly-detection",
+  "version": "1.0.0",
+  "description": "Anomaly detection engine for weather readings using Z-score and Isolation Forest",
+  "main": "scheduler.js",
+  "scripts": {
+    "start": "node scheduler.js",
+    "dev": "python3 anomaly_engine.py"
+  },
+  "keywords": [
+    "anomaly-detection",
+    "machine-learning",
+    "weather",
+    "isolation-forest",
+    "z-score"
+  ],
+  "author": "",
+  "license": "MIT",
+  "optionalDependencies": {
+    "node-cron": "^3.0.0"
+  },
+  "devDependencies": {}
+}
