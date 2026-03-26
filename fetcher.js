@@ -1,5 +1,5 @@
 const axios = require('axios');
-const pool = require('./db');
+const pool = require('./backend/db');
 
 async function fetchWeather() {
   console.log("Fetching grid-based weather data...");
@@ -33,15 +33,17 @@ async function fetchWeather() {
 
         await pool.query(
           `INSERT INTO weather_readings 
-          (location, city_name, temperature, humidity, pressure, wind_speed, precipitation)
+          (location, city_name, lat, lon, temperature, humidity, pressure, wind_speed, precipitation)
           VALUES (
             ST_SetSRID(ST_MakePoint($1, $2), 4326),
-            $3, $4, $5, $6, $7, $8
+            $3, $4, $5, $6, $7, $8, $9, $10
           )`,
           [
             lon,
             lat,
-            `GRID_${lat}_${lon}`, // synthetic name
+            `Grid (${lat}, ${lon})`,
+            lat,
+            lon,
             temperature,
             humidity,
             pressure,

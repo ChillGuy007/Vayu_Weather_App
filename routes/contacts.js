@@ -1,0 +1,8 @@
+const router = require('express').Router();
+const auth = require('../middleware/authMiddleware');
+const { addContact, getContacts } = require('../controllers/contactsController');
+
+router.post('/', auth, addContact);
+router.get('/', auth, getContacts);
+
+module.exports = router;

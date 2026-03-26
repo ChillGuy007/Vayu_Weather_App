@@ -1,10 +1,17 @@
 const cron = require('node-cron');
 const fetchWeather = require('./fetcher');
+const { exec } = require('child_process');
 
-// Runs every hour
-cron.schedule('0 * * * *', () => {
-  console.log("Running weather fetch job...");
-  fetchWeather();
+cron.schedule('0 * * * *', async () => {
+  console.log("Running pipeline...");
+
+  await fetchWeather();
+
+  exec('d:/Vayu/.venv/Scripts/python.exe anomaly_engine.py', (err, stdout, stderr) => {
+    if (err) {
+      console.error("Python error:", err);
+      return;
+    }
+    console.log(stdout);
+  });
 });
-
-console.log("Scheduler started...");
