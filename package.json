@@ -1,14 +1,21 @@
 {
   "name": "vayu",
   "version": "1.0.0",
-  "main": "db.js",
+  "description": "Anomaly detection engine for weather readings using Z-score and Isolation Forest",
+  "main": "scheduler.js",
   "scripts": {
+    "start": "node scheduler.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "anomaly-detection",
+    "machine-learning",
+    "weather",
+    "isolation-forest",
+    "z-score"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.13.6",
     "dotenv": "^17.3.1",
