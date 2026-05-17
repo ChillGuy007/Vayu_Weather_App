@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 36 90% 55%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 215 20% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 200 60% 45%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 36 90% 55%;
+
+    --radius: 0.75rem;
+
+    --sky-from: 215 60% 20%;
+    --sky-to: 220 30% 10%;
+    --glow: 36 90% 55%;
+    --info: 200 80% 60%;
+    --warning: 36 90% 55%;
+    --success: 152 60% 45%;
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 36 90% 55%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 215 25% 18%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 215 20% 18%;
+    --sidebar-ring: 36 90% 55%;
+  }
+
+  /* Weather-responsive palettes */
+  .weather-sunny {
+    --primary: 36 90% 55%;
+    --primary-foreground: 220 25% 8%;
+    --accent: 30 80% 50%;
+    --accent-foreground: 220 25% 8%;
+    --ring: 36 90% 55%;
+    --glow: 36 90% 55%;
+    --info: 36 70% 55%;
+    --warning: 25 85% 50%;
+    --card: 30 20% 14%;
+    --border: 30 20% 20%;
+    --muted: 30 15% 18%;
+    --muted-foreground: 30 15% 55%;
+    --sky-from: 36 60% 20%;
+    --sky-to: 25 30% 10%;
+  }
+
+  .weather-partly-cloudy {
+    --primary: 36 90% 55%;
+    --primary-foreground: 220 25% 8%;
+    --accent: 200 60% 45%;
+    --accent-foreground: 210 20% 95%;
+    --ring: 36 90% 55%;
+    --glow: 36 90% 55%;
+    --info: 200 80% 60%;
+    --warning: 36 90% 55%;
+  }
+
+  .weather-cloudy {
+    --primary: 215 30% 55%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 210 25% 50%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 215 30% 55%;
+    --glow: 215 25% 45%;
+    --info: 210 40% 55%;
+    --warning: 40 50% 50%;
+    --card: 218 18% 13%;
+    --border: 215 18% 20%;
+    --muted: 215 15% 17%;
+    --muted-foreground: 215 12% 50%;
+    --sky-from: 215 20% 16%;
+    --sky-to: 220 18% 8%;
+  }
+
+  .weather-rainy {
+    --primary: 200 70% 50%;
+    --primary-foreground: 220 30% 8%;
+    --accent: 195 65% 45%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 200 70% 50%;
+    --glow: 200 60% 45%;
+    --info: 195 80% 55%;
+    --warning: 200 50% 50%;
+    --success: 175 50% 40%;
+    --card: 210 22% 11%;
+    --border: 210 20% 18%;
+    --muted: 210 18% 15%;
+    --muted-foreground: 210 15% 50%;
+    --sky-from: 210 30% 14%;
+    --sky-to: 215 25% 7%;
+  }
+
+  .weather-stormy {
+    --primary: 270 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 250 50% 50%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 270 60% 55%;
+    --glow: 270 50% 45%;
+    --info: 260 60% 55%;
+    --warning: 0 70% 55%;
+    --success: 180 40% 38%;
+    --destructive: 350 80% 50%;
+    --card: 230 22% 10%;
+    --border: 230 20% 16%;
+    --muted: 230 18% 14%;
+    --muted-foreground: 230 15% 48%;
+    --sky-from: 230 25% 12%;
+    --sky-to: 225 20% 5%;
+  }
+
+  .weather-snowy {
+    --primary: 200 40% 70%;
+    --primary-foreground: 220 30% 10%;
+    --accent: 210 30% 65%;
+    --accent-foreground: 220 30% 10%;
+    --ring: 200 40% 70%;
+    --glow: 210 30% 65%;
+    --info: 200 50% 65%;
+    --warning: 30 40% 55%;
+    --success: 160 35% 50%;
+    --card: 215 15% 16%;
+    --border: 215 12% 22%;
+    --muted: 215 12% 19%;
+    --muted-foreground: 215 10% 55%;
+    --sky-from: 210 15% 20%;
+    --sky-to: 215 12% 10%;
+    --foreground: 210 15% 90%;
+  }
+
+  .light-mode {
+    --background: 210 20% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 25 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 92%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 15% 90%;
+    --muted-foreground: 215 15% 40%;
+
+    --accent: 200 60% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 85%;
+    --input: 214 25% 85%;
+    --ring: 25 85% 45%;
+
+    --sky-from: 210 40% 92%;
+    --sky-to: 210 30% 96%;
+    --glow: 25 85% 45%;
+    --info: 200 80% 45%;
+    --warning: 36 90% 50%;
+    --success: 152 60% 38%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 25 85% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 92%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 25% 85%;
+    --sidebar-ring: 25 85% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-border/60;
+  }
+  .gradient-sky {
+    background: linear-gradient(180deg, hsl(var(--sky-from)) 0%, hsl(var(--sky-to)) 100%);
+  }
+  .gradient-glow {
+    background: radial-gradient(ellipse at 50% 0%, hsl(var(--glow) / 0.15) 0%, transparent 60%);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--info)) 100%);
+  }
+}
